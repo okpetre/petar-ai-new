@@ -1,0 +1,1430 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Montserrat:wght@400;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #FFFFFF; /* Changed to white for links/accents */
+    --secondary-color: #222; /* Keep as is for now, not directly text */
+    --background-color: #0A0A0A; /* Keep as is */
+    --text-color: #FFFFFF; /* Pure white for general text */
+    --text-color-dark: #000000; /* Pure black for text on light backgrounds */
+    --button-hover: #FFFFFF; /* Changed to white for hover */
+    --card-background: #151515; /* Keep as is */
+    --border-color: #282828; /* Keep as is */
+    --accent-color-light: #FFFFFF; /* Changed to white if used for text */
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: black;
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* General Body Styles */
+
+.mobile-gif-section {
+    display: none; /* Hidden by default for desktop */
+}
+
+@media (max-width: 768px) {
+    body {
+        background-image: url('sajt.png?v=2') !important;
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center;
+        background-color: transparent !important;
+    }
+    .ai-chatbot-section {
+        background-color: transparent !important;
+    }
+
+    .mobile-gif-section {
+        display: flex; /* Show on mobile */
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0; /* Remove padding */
+        margin-top: 0; /* Remove top margin */
+    }
+
+    .mobile-gif-section .video-container {
+        display: block !important; /* Ensure video container is visible */
+        width: 100%;
+        text-align: center;
+    }
+
+    .mobile-gif-section .animated-gif {
+        display: block !important; /* Ensure GIF is visible */
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+/* General styles */
+.ai-chatbot-main-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+@media (max-width: 768px) {
+    .ai-chatbot-section {
+        padding-bottom: 0; /* Remove bottom padding from chatbot section */
+    }
+    .ai-chatbot-main-content {
+        align-items: center; /* Center items horizontally when in column */
+        width: 100%; /* Ensure it takes full width */
+        margin: 0 auto; /* Center it */
+    }
+
+    .ai-chatbot-text-content {
+        width: 100%; /* Ensure they take full width */
+        margin: 0 auto; /* Center them */
+        text-align: center; /* Center all text within this container */
+    }
+    .video-container {
+        display: none !important; /* Hide the video container on mobile */
+    }
+    .animated-gif {
+        display: none !important; /* Hide the GIF on mobile with !important */
+    }
+
+    .ai-chatbot-text-content p, .ai-chatbot-text-content h2, .ai-chatbot-text-content h3 {
+        text-align: center; /* Center text within its container */
+    }
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 25px;
+    border-radius: 8px; /* Slightly more rounded corners */
+    font-weight: 600;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-contact {
+    background-color: transparent;
+    color: var(--text-color); /* White text */
+    border: 1px solid var(--primary-color); /* Border with primary color */
+    border-radius: 8px; /* Rounded corners */
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-contact:hover {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: var(--text-color-dark);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--text-color-dark); /* Text on primary button */
+    border: 1px solid var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: var(--button-hover);
+    border-color: var(--button-hover);
+}
+
+.button-group {
+    display: flex;
+    gap: 20px;
+    justify-content: center; /* Center the buttons within the group */
+    margin-top: 30px; /* Add some space above the button group */
+}
+
+.button-group .btn {
+    flex: 1;
+    max-width: 250px; /* Optional: set a max-width to prevent them from becoming too wide on large screens */
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--primary-color); /* Text color for secondary button */
+    border: 1px solid var(--primary-color);
+}
+
+.btn-secondary:hover {
+    background-color: var(--primary-color);
+    color: var(--text-color-dark);
+}
+
+/* Header */
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 80px; /* Increased padding */
+    background-color: transparent; /* Transparent background */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
+}
+
+.site-header.scrolled {
+    background-color: rgba(10, 10, 10, 0.6); /* Slightly more transparent */
+    backdrop-filter: blur(10px); /* Blur effect */
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.site-logo {
+    height: 35px;
+    margin-right: 10px;
+}
+
+.header-left span {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px; /* Slightly smaller logo text */
+    font-weight: 700;
+    color: var(--text-color);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.main-nav li {
+    margin-left: 40px; /* Increased spacing */
+}
+
+.main-nav a {
+    color: var(--text-color); /* White text */
+    text-decoration: none;
+    font-weight: 400; /* Lighter font weight */
+    font-size: 14px; /* Smaller font size */
+    text-transform: uppercase; /* Uppercase text */
+    letter-spacing: 1px; /* Spacing between letters */
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.main-nav a:hover {
+    color: rgba(255, 255, 255, 0.7); /* White with lower opacity on hover */
+}
+
+.main-nav a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px; /* Position the underline below the text */
+    width: 0%;
+    height: 1px; /* Thickness of the underline */
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+.main-nav a:hover::after {
+    width: 100%;
+}
+
+/* Hero Section */
+.hero-section {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Full viewport height */
+    padding: 150px 80px 50px 80px; /* Adjust padding for header and bottom */
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+    text-align: center; /* Center text */
+}
+
+.hero-content {
+    max-width: 900px; /* Constrain content width */
+    margin-bottom: 50px; /* Space below content */
+    z-index: 2; /* Ensure hero content is above robot */
+    position: relative; /* Needed for z-index to work */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero-content h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 8em; /* Large font size for impact */
+    font-weight: 700;
+    line-height: 0.8;
+    margin-bottom: 200px;
+    background: linear-gradient(to right, #eee, #333);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    text-transform: uppercase;
+}
+
+.hero-content p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    color: var(--text-color); /* Changed to white */
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px; /* Space between buttons */
+    justify-content: center; /* Center the button group */
+    margin-top: 30px; /* Space above the button group */
+}
+
+.hero-buttons .btn {
+    margin-right: 15px;
+}
+
+.trusted-by {
+    margin-top: 50px;
+}
+
+.trusted-by p {
+    font-size: 0.9em;
+    color: var(--text-color); /* Changed to white */
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.logo-grid {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.logo-grid img {
+    height: 30px;
+    filter: grayscale(100%) brightness(200%);
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.logo-grid img:hover {
+    opacity: 1;
+}
+
+.hero-robot-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Cover entire hero section */
+    height: 100%; /* Cover entire hero section */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    z-index: 1; /* Behind hero-content, above background */
+    background-color: #000000;
+}
+
+.hero-robot-container iframe {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border: none;
+    transform: scale(1.5); /* Scale up the robot to fit as background */
+    transform-origin: center; /* Scale from center */
+    opacity: 0.3; /* Make it subtle */
+}
+
+#robot-iframe {
+    max-width: 750px;
+    min-width: 750px;
+    height: 106%;
+    border: none;
+    background: transparent;
+}
+
+/* Services Section */
+.ai-chatbot-section {
+    padding: 80px 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: calc(100vh - 80px); /* Adjust based on header/footer height */
+    background-image: url('ps2.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
+}
+
+.ai-chatbot-main-content {
+    display: flex;
+    flex-direction: row; /* Arrange items horizontally */
+    align-items: center; /* Align items vertically in the center */
+    justify-content: center; /* Center content horizontally */
+    gap: 40px; /* Space between text and GIF */
+    max-width: 1200px; /* Max width for the content */
+    margin: 0 auto; /* Center the content */
+    width: 100%;
+}
+
+.ai-chatbot-text-content {
+    flex: 1; /* Allow text content to take available space */
+    max-width: 600px; /* Limit text content width */
+    text-align: center; /* Align text to the center */
+}
+
+.ai-chatbot-text-content h2 {
+    text-align: center; /* Ensure h2 is center-aligned */
+}
+
+.ai-chatbot-text-content .button-group {
+    justify-content: center; /* Align buttons to the center */
+}
+
+.ai-chatbot-text-content .features-list {
+    text-align: center; /* Align features list to the center */
+}
+
+.ai-chatbot-text-content .feature-item {
+    text-align: center; /* Align feature items to the center */
+}
+
+.services-section {
+    padding: 80px 130px;
+    background-color: #000000;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align section content to the left */
+    border: none;
+}
+
+.services-section h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3em;
+    font-weight: 700;
+    margin-bottom: 50px;
+    color: var(--text-color); /* Changed to white */
+    text-align: center; /* Center the H2 title */
+    width: 100%; /* Ensure it takes full width to center */
+}
+
+.services-content {
+    display: flex;
+    flex-wrap: nowrap; /* Ensure children stay in one row */
+    gap: 40px;
+    max-width: 100%; /* Allow it to span full width of its parent */
+    margin-left: 0; /* Align content to the left */
+    margin-right: 0; /* Align content to the right */
+    align-items: center;
+    justify-content: space-between; /* Distribute space between items */
+    width: 100%;
+}
+
+.services-section .service-grid {
+    display: flex;
+    flex-wrap: wrap; /* Allow cards to wrap to the next line */
+    gap: 20px; /* Space between cards */
+    flex: 3; /* Allow service grid to take up more space */
+    min-width: 0; /* Allow it to shrink */
+    margin-right: auto; /* Push service-grid to the left */
+    justify-content: center; /* Center cards when wrapped */
+}
+
+.services-section .service-card {
+    transition: all 0.5s ease; /* Smooth transitions for all properties */
+    filter: grayscale(0%); /* Default to full color */
+    opacity: 1; /* Default to full opacity */
+    overflow: hidden; /* Hide overflowing content when narrowed */
+    flex-shrink: 1; /* Allow shrinking */
+    flex-grow: 1; /* Allow growing */
+    flex-basis: 250px; /* Ideal width, but allows shrinking/growing */
+    display: flex; /* Use flexbox for content/logo alignment */
+    flex-direction: column; /* Stack content vertically */
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    text-align: center; /* Center text within the card */
+    height: 350px; /* Fixed height for all cards, adjust as needed */
+    position: relative; /* Needed for absolute positioning of progress bar */
+    background-color: var(--card-background);
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+}
+
+.services-section .service-card.narrowed {
+    width: 20%; /* Narrow width */
+    filter: grayscale(100%); /* Black and white */
+    opacity: 0.6; /* Slightly transparent */
+}
+
+.services-section .service-card.expanded {
+    width: 60%; /* Expanded width */
+    filter: grayscale(0%); /* Full color */
+    opacity: 1; /* Full opacity */
+}
+
+.service-card-logo {
+    height: 100px; /* Fixed height for the logo container */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px; /* Space between logo and content */
+}
+
+.service-card-logo img {
+    max-height: 100%; /* Ensure image fits within container */
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.service-card-content {
+    margin-top: auto; /* Push content to the bottom */
+    padding-top: 10px; /* Add some padding above the text */
+}
+
+.service-card h3 {
+    color: #A9A9A9; /* Grey color */
+}
+
+
+
+
+
+
+
+.video-container {
+    flex: 1; /* Allow video container to take up remaining space */
+    max-width: 500px; /* Limit its maximum width */
+    min-width: 300px; /* Ensure it doesn't shrink too much */
+}
+
+.animated-gif {
+    width: 100%; /* Make GIF fill its container */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Remove extra space below image */
+    object-fit: contain; /* Ensure the entire image is visible, scaling down if necessary */
+}
+
+
+.services-section .service-card {
+    background-color: var(--card-background);
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    transition: all 0.5s ease; /* Smooth transition for all properties */
+    flex-shrink: 0; /* Prevent shrinking */
+    width: 280px; /* Base width for cards */
+    height: 400px; /* Base height for cards */
+
+
+}
+
+.services-section .service-card.discord-card {
+    background-color: #007bff; /* Blue color for discord card */
+}
+
+.services-section .service-card.expanded {
+    width: 800px; /* Increased width for the expanded card */
+    flex-grow: 2; /* Allow it to grow more */
+    filter: grayscale(0%); /* Full color when expanded */
+    opacity: 1; /* Full opacity when expanded */
+}
+
+.services-section .service-card.narrowed {
+    width: 20px /* Thinner for narrowed cards */
+}
+
+.services-section .service-card .service-card-content {
+    transition: opacity 0.5s ease;
+}
+
+.services-section .service-card.narrowed .service-card-content {
+    opacity: 0;
+    pointer-events: none; /* Disable interactions when hidden */
+}
+
+.services-section .service-card.expanded .service-card-content {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.services-section .service-card .service-card-logo {
+    transition: transform 0.5s ease;
+}
+
+.services-section .service-card .service-card-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.services-section .service-card.expanded .service-card-logo {
+    transform: scale(0.8); /* Slightly shrink logo in expanded view */
+}
+
+.services-section .service-card .progress-bar {
+    position: absolute;
+    bottom: 20px; /* Adjust position from bottom */
+    left: 20px;
+    /* Removed right: 20px; */
+    height: 2px; /* Thinner line */
+    background-color: white;
+    width: 0%; /* Initial state, hidden */
+    transition: width 0.1s linear; /* Smooth animation for width */
+    opacity: 0; /* Initially hidden */
+}
+
+.services-section .service-card.expanded .progress-bar {
+    opacity: 1; /* Show when expanded */
+    width: calc(100% - 40px); /* Animate to full width minus padding */
+}
+
+.platforms-section .service-grid {
+    display: flex;
+    flex-wrap: nowrap; /* Ensure cards stay in one row */
+    gap: 20px; /* Space between cards */
+    justify-content: center; /* Center the cards if there's extra space */
+    overflow-x: auto; /* Allow horizontal scrolling if cards exceed container width */
+    padding-bottom: 10px; /* Add some padding for scrollbar if present */
+}
+
+.platforms-section .service-card {
+    flex-shrink: 0; /* Prevent shrinking */
+    flex-grow: 0; /* Prevent growing */
+    flex-basis: 300px; /* Set a fixed width for all cards */
+    width: 300px; /* Fallback for older browsers */
+    text-align: center; /* Center text within the card */
+}
+
+.platforms-section .service-card h3 {
+    white-space: nowrap; /* Keep text on one line */
+    overflow: hidden; /* Hide overflowing text */
+    text-overflow: ellipsis; /* Add ellipsis for truncated text */
+}
+
+.platforms-section .service-card .icon-placeholder {
+    display: flex; /* Use flexbox to center the image */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 80px; /* Give it a fixed height */
+    width: 80px; /* Give it a fixed width */
+    margin-bottom: 0px; /* Add some space below the icon */
+}
+
+.platforms-section .service-card .icon-placeholder img {
+    max-width: 100%; /* Ensure image fits within the placeholder */
+    max-height: 100%;
+    object-fit: contain; /* Contain the image within the bounds */
+}
+
+.services-section .service-card .service-card-content {
+    transition: opacity 0.3s ease;
+    position: absolute; /* Position absolutely to prevent reflow */
+    top: 134px; /* Fill the card */
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px; /* Add padding to content */
+    box-sizing: border-box; /* Include padding in width/height */
+}
+
+.services-section .service-card .service-card-content h3,
+.services-section .service-card .service-card-content p {
+    margin: 0;
+    padding: 0;
+}
+
+.services-section .service-card .service-card-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Take full height of card */
+    width: 100%; /* Take full width of card */
+    transition: opacity 0.3s ease;
+    position: absolute; /* Position absolutely to prevent reflow */
+    top: 0;
+    left: 0;
+}
+
+.services-section .service-card.narrowed .service-card-content {
+    opacity: 0; /* Hide text content */
+    pointer-events: none; /* Prevent interaction with hidden text */
+}
+
+.services-section .service-card.narrowed .service-card-logo {
+    opacity: 1; /* Show logo */
+}
+
+.services-section .service-card.expanded .service-card-content {
+    opacity: 1; /* Show text content */
+    pointer-events: auto;
+}
+
+.services-section .service-card.expanded .service-card-logo {
+    opacity: 0; /* Hide logo */
+}
+
+.services-section .service-card.narrowed {
+    width: 150px; /* Fixed narrow width */
+    filter: grayscale(100%); /* Black and white */
+    opacity: 0.6; /* Slightly transparent */
+}
+
+.services-section .service-card.expanded {
+    width: 450px; /* Fixed expanded width */
+    filter: grayscale(0%); /* Full color */
+    opacity: 1; /* Full opacity */
+}
+
+.video-container {
+    flex: 1;
+    width: 100%;
+    max-width: 500px; /* Adjust as needed */
+}
+
+.animated-gif {
+    width: 189%;
+    height: auto;
+    display: block;
+}
+
+.service-card {
+    background-color: var(--card-background);
+    padding: 30px;
+    border-radius: 10px;
+    text-align: left;
+    transition: transform 0.3s ease;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+}
+
+.services-section .service-card {
+    transition: all 0.5s ease; /* Smooth transitions for all properties */
+    filter: grayscale(0%); /* Default to full color */
+    opacity: 1; /* Default to full opacity */
+}
+
+.services-section .service-card.narrowed {
+    width: 20%; /* Narrow width */
+    filter: grayscale(100%); /* Black and white */
+    opacity: 0.6; /* Slightly transparent */
+}
+
+.services-section .service-card.expanded {
+    width: 60%; /* Expanded width */
+    filter: grayscale(0%); /* Full color */
+    opacity: 1; /* Full opacity */
+}
+
+.service-card:hover {
+
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.platforms-section {
+    padding: 80px 40px;
+    background-image: url('ps2.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: none;
+}
+
+.platforms-section .service-card {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: var(--card-background);
+    box-shadow: none !important; /* Ensure no shadow */
+    border-radius: 15px;
+    padding: 15px;
+    text-align: left;
+    transition: transform 0.3s ease;
+    border: 1px solid var(--border-color);
+}
+
+.platforms-section .service-card .icon-placeholder {
+    max-width: 50px; /* Adjust as needed to control icon size within the flex layout */
+}
+
+.instagram-card {
+    background-image: linear-gradient(145deg, rgba(0,0,0,0.9) 60%, rgba(254,218,117,0.15), rgba(250,126,30,0.15), rgba(214,41,118,0.15), rgba(150,47,191,0.15), rgba(79,91,213,0.15), rgba(0,0,0,0.9) 90%); /* Instagram subtle gradient */
+}
+
+.x-card {
+    background-image: linear-gradient(145deg, rgba(0,0,0,0.9) 60%, rgba(51,51,51,0.15), rgba(0,0,0,0.15), rgba(0,0,0,0.9) 90%); /* X (Twitter) subtle gradient */
+}
+
+.youtube-card {
+    background-image: linear-gradient(145deg, rgba(0,0,0,0.9) 60%, rgba(255,0,0,0.15), rgba(196,48,43,0.15), rgba(0,0,0,0.9) 90%); /* YouTube subtle gradient */
+}
+
+.discord-card {
+    background-image: linear-gradient(145deg, rgba(0,0,0,0.9) 60%, rgba(0,123,255,0.15), rgba(0,123,255,0.15), rgba(0,0,0,0.9) 90%); /* Discord subtle gradient - Blue */
+}
+
+.platforms-section .service-card h3 {
+    color: var(--text-color); /* Changed to white */
+    font-size: 1.2em;
+    margin-top: 20px;
+}
+
+.platforms-section .service-card p {
+    color: var(--text-color); /* Changed to white */
+    font-size: 0.8em;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.icon-placeholder {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--bg-medium); /* Placeholder background for icon */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.icon-placeholder img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.card-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+
+.card-link .arrow {
+    margin-left: 5px;
+    transition: transform 0.3s ease;
+}
+
+.card-link:hover .arrow {
+    transform: translateX(5px);
+}
+
+.platforms-section h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3em;
+    font-weight: 700;
+    margin-bottom: 50px;
+    color: var(--text-color-light); /* Use existing text color */
+}
+
+/* Footer Styles */
+footer {
+    background-color: black;
+    color: #ffffff;
+    padding: 40px 20px;
+    font-family: Arial, sans-serif;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #333;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 180px;
+    margin: 20px;
+}
+
+.footer-section.about {
+    min-width: 250px;
+}
+
+.footer-section h3 {
+    color: #00bfff; /* A light blue for headings */
+    margin-bottom: 15px;
+    font-size: 1.2em;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: #00bfff;
+}
+
+.footer-logo {
+    width: 230px; /* Adjust as needed */
+    margin-bottom: 15px;
+}
+
+.social-links img {
+    width: 24px;
+    height: 24px;
+    margin-right: 15px;
+    transition: transform 0.3s ease;
+}
+
+.social-links img:hover {
+    transform: scale(1.1);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    font-size: 0.9em;
+    color: #aaaaaa;
+}
+
+.legal-links a {
+    color: #aaaaaa;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.legal-links a:hover {
+    color: #00bfff;
+}
+
+/* The .services-content and .service-grid classes are reused for platforms-section */
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .main-nav ul {
+        display: none; /* Hide navigation by default on small screens */
+    }
+
+    .site-header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .header-left {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .hamburger-menu {
+        display: block; /* Show hamburger on small screens */
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 10px;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        z-index: 1000;
+    }
+
+    .hamburger-menu .bar {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background-color: #ffffff;
+        margin: 5px 0;
+        transition: 0.4s;
+    }
+
+    .main-nav.active ul {
+        display: flex; /* Show navigation when active */
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        background-color: #1a1a1a !important; /* Same as footer/header background */
+        position: absolute !important;
+        top: 60px !important; /* Adjust based on header height */
+        left: 0 !important;
+        padding: 20px 0 !important;
+    }
+
+    .main-nav.active ul li {
+        margin: 10px 0;
+    }
+
+    * {
+        box-sizing: border-box; /* Force consistent box model */
+    }
+
+    body, html {
+        background-color: black; /* Ensure full black background on mobile */
+        width: 100%;
+        overflow-x: hidden; /* Prevent horizontal scroll */
+    }
+
+    footer .footer-section.links h3 {
+        color: #A9A9A9; /* Grey color */
+    }
+
+    .hero-section,
+    .ai-chatbot-section,
+    .services-section,
+    .platforms-section {
+        padding-left: 0;
+        padding-right: 0;
+        margin-left: 0;
+        margin-right: 0;
+        width: 100%;
+    }
+
+    .container {
+        padding: 0 15px; /* Add some padding to content within containers */
+        width: 100%;
+    }
+
+    .service-grid {
+        grid-template-columns: 1fr; /* Stack service cards vertically */
+    }
+
+    .service-card {
+        margin-bottom: 20px; /* Add space between stacked cards */
+    }
+
+    .video-container {
+        display: flex; /* Use flexbox to center content */
+        justify-content: center; /* Center horizontally */
+        align-items: center; /* Center vertically */
+        width: 100%; /* Ensure it takes full width */
+        margin-top: 20px; /* Add some space above the GIF */
+    }
+
+    .animated-gif {
+        max-width: 144%; /* Ensure GIF fits within screen width */
+        height: auto; /* Maintain aspect ratio */
+        display: block; /* Remove extra space below image */
+        margin: 0 auto; /* Center the image itself */
+    }
+
+    .platforms-section h2,
+    .platforms-section h2 {
+        font-size: 2em; /* Set font size to 2em for mobile */
+        margin-bottom: 20px; /* Reduce gap before GIF */
+    }
+
+    .platforms-content {
+        display: flex; /* Make platforms-content a flex container */
+        flex-wrap: wrap; /* Allow items to wrap */
+        justify-content: center; /* Center the grid */
+        width: 100%; /* Ensure it takes full width */
+    }
+
+    .service-grid {
+        grid-template-columns: 1fr; /* Default to single column on mobile for services */
+    }
+
+    .platforms-section .service-grid {
+        display: flex; /* Use flexbox for horizontal layout */
+        flex-wrap: nowrap; /* Prevent cards from wrapping to new lines */
+        gap: 20px; /* Adjust gap between platform cards */
+        width: 100%; /* Make sure it takes full width */
+        overflow-x: hidden; /* Hide scrollbar for now, JS will handle scrolling */
+    }
+
+    .platforms-section .service-card {
+        flex-shrink: 0; /* Prevent cards from shrinking */
+        width: 80%; /* Adjust card width to show one at a time */
+        max-width: 300px; /* Max width for individual cards */
+    }
+
+
+
+    .hero-section {
+        position: relative;
+        height: 100vh; /* Use full viewport height for hero section on mobile */
+        min-height: 500px; /* Ensure a minimum height */
+        display: flex; /* Use flexbox for content alignment */
+        flex-direction: column; /* Stack content vertically */
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        overflow: hidden; /* Hide overflow to prevent scrollbars */
+        background-image: url('nexbot.png'); /* Set nexbot.png as background for mobile */
+        background-size: cover; /* Cover the entire section */
+        background-position: center; /* Center the background image */
+        background-repeat: no-repeat; /* Do not repeat the image */
+    }
+
+    .hero-robot-container {
+        background-color: black; /* Solid black background on mobile */
+        display: block; /* Ensure it's visible on mobile */
+        position: absolute; /* Position absolutely within hero-section */
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1; /* Place behind hero-content */
+        overflow: hidden; /* Hide overflow for the robot container */
+    }
+
+    .hero-content {
+        background-color: rgba(0, 0, 0, 0.7); /* Black background with some transparency */
+        padding: 20px; /* Add some padding for text */
+        margin: 20px; /* Add some margin around the content */
+        border-radius: 10px; /* Slightly rounded corners */
+    }
+
+    iframe {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Ensure iframe content covers the area */
+    }
+
+    .hero-content {
+        position: relative; /* Ensure hero-content is above the robot */
+        z-index: 1; /* Place above the robot container */
+        padding: 20px; /* Add some padding for text */
+        background-color: transparent; /* Ensure no background color blocking robot */
+    }
+}
+
+.platforms-section .service-grid {
+    grid-template-columns: repeat(4, 1fr); /* 4 columns for platforms section */
+    gap: 20px; /* Adjust gap for single row */
+    max-width: 100%; /* Allow it to take full width */
+}
+
+.service-card h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8em;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+}
+
+.service-card p {
+    font-size: 1em;
+    color: #b0b0b0;
+}
+
+/* Cookie Consent Banner */
+.cookie-consent-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    z-index: 1000;
+    border-top: 1px solid var(--border-color);
+}
+
+.cookie-consent-banner p {
+    margin: 0;
+    font-size: 0.9em;
+}
+
+.cookie-consent-banner .cookie-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.cookie-consent-banner .btn {
+    padding: 8px 15px;
+    font-size: 0.9em;
+}
+
+.privacy-policy-link {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 820px) {
+    .site-header {
+        padding: 15px 20px;
+    }
+
+    .main-nav {
+        display: none; /* Hide navigation on small screens */
+    }
+
+    .hero-section {
+        flex-direction: column;
+        text-align: center;
+        padding: 80px 20px;
+    }
+
+    .hero-content {
+        max-width: 100%;
+        top: 50px; /* Adjust top position for mobile */
+        position: relative; /* Ensure 'top' property works */
+    }
+
+    .hero-content h1 {
+        font-size: 3em;
+    }
+
+    .hero-robot-container {
+        position: relative;
+        width: 100%;
+        height: 300px; /* Adjust height for mobile */
+        margin-top: 50px;
+    }
+
+    .logo-grid {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .services-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service-grid {
+        grid-template-columns: 1fr; /* Stack on small screens */
+        max-width: unset;
+    }
+
+    .platforms-section .service-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for platforms section on mobile */
+        animation: none; /* Remove animations */
+        box-sizing: border-box; /* Include padding in width */
+
+        h3 {
+            font-size: 0.9em; /* Smaller font size for mobile */
+            line-height: 1.2; /* Adjust line height */
+        }
+
+        .desktop-text {
+            display: none; /* Hide desktop text on mobile */
+        }
+
+        .mobile-text {
+            display: inline; /* Show mobile text on mobile */
+        }
+    }
+
+    .platforms-section .service-card {
+        height: auto; /* Allow height to be determined by content */
+        flex-basis: calc(50% - 10px); /* Adjust for 2 columns with smaller gap */
+        width: calc(50% - 10px); /* Ensure it fits two columns with smaller gap */
+        padding: 10px; /* Further reduce padding for smaller screens */
+        box-sizing: border-box; /* Include padding in width */
+        max-width: 200px; /* Set max-width for mobile devices, including iPad Air */
+    }
+
+    .service-grid.hide-on-desktop .service-card.instagram-card:nth-child(2) {
+        display: none !important; /* Using !important to ensure it overrides other rules */
+    }
+
+    .service-grid:not(.hide-on-desktop) .service-card.instagram-card {
+        display: none;
+    }
+
+    .service-grid:not(.hide-on-desktop) .service-card.discord-card:last-child {
+        display: none;
+    }
+
+
+
+    @media (max-width: 820px) {
+        /* Hide the original discord card on mobile */
+        #mobile-discord-to-replace {
+            display: none !important;
+        }
+    }
+
+    /* Hide the new instagram card on desktop */
+    .mobile-only-display {
+        display: none;
+    }
+
+    @media (max-width: 820px) {
+        /* Hide the new instagram card on mobile */
+        .mobile-only-display {
+            display: none !important;
+        }
+    }
+
+    .ai-chatbot-section .button-group .btn {
+        padding: 8px 15px; /* Smaller padding */
+        font-size: 0.9em; /* Smaller font size */
+        max-width: 45%; /* Further decrease width */
+        box-sizing: border-box; /* Ensure padding is included in width */
+    }
+
+    .ai-chatbot-section .button-group {
+        flex-direction: row; /* Arrange buttons in a single row */
+        justify-content: center; /* Center buttons horizontally */
+        gap: 10px; /* Space between buttons */
+    }
+
+    .hero-robot-container {
+        background-color: black !important;
+    }
+}
+
+@media (min-width: 821px) {
+    .platforms-section .service-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px; /* Add a gap for consistency */
+    }
+    .platforms-section .service-card {
+        padding: 10px; /* Reduced padding for thinner cards */
+        /* Removed flex-basis and width, relying on grid-template-columns */
+        .desktop-text {
+            display: inline; /* Show desktop text on desktop */
+        }
+
+        .mobile-text {
+            display: none; /* Hide mobile text on desktop */
+        }
+
+        /* Reverted changes */
+    }
+
+    .platforms-section .service-card {
+        max-width: 300px; /* Default desktop max-width, adjust as needed */
+    }
+
+
+
+    .video-container {
+        max-width: unset;
+        width: 100%;
+    }
+
+    .cookie-consent-banner {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .cookie-consent-banner .cookie-buttons {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 820px) {
+    .footer-content {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        padding-right: 20px; /* Adjust as needed */
+        transform: scale(0.9); /* Decrease overall size */
+        transform-origin: top left; /* Scale from top-left corner */
+    }
+
+    .footer-section {
+        text-align: center; /* Center align content within each footer section */
+    }
+
+    .footer-section ul {
+        padding: 0; /* Remove padding from ul to center list items */
+    }
+
+    .footer-section ul li {
+        text-align: center; /* Center align list items */
+    }
+
+    .footer-section h3 {
+        font-size: 1em; /* Smaller heading size */
+    }
+
+    .footer-section ul li a {
+        font-size: 0.75em; /* Smaller link text size */
+        word-break: break-word; /* Allow long words to break */
+    }
+}
+
+@media (min-width: 1024px) and (max-width: 1024px) and (min-height: 1366px) {
+    main {
+        min-height: calc(100vh - 100px); /* Adjust as needed to ensure footer is visible */
+    }
+}
+
+@media (min-width: 1024px) and (max-width: 1024px) and (min-height: 1366px) {
+    main {
+        min-height: calc(100vh - 100px); /* Adjust as needed to ensure footer is visible */
+    }
+}
+
+@media (min-width: 769px) {
+    .hide-on-desktop {
+        display: none !important;
+    }
+}
+
+/* Override for service card images to remove all effects */
+.services-section .service-card img {
+    filter: none !important;
+    opacity: 1 !important;
+}

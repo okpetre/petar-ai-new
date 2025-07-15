@@ -1,0 +1,34 @@
+footer .social-links {
+    margin-top: 20px;
+}
+
+.footer-section.links h3 {
+    color: white;
+}
+
+/* Override for service card images to remove all effects */
+.services-section .service-card.narrowed img {
+    filter: none !important;
+    opacity: 1 !important;
+}
+
+.services-section .service-card img {
+    filter: none !important;
+    opacity: 1 !important;
+}
+
+/* Force remove all grayscale and opacity from service card images */
+.services-section .service-card.narrowed {
+    filter: none !important;
+    opacity: 1 !important;
+}
+
+.services-section .service-card.narrowed img {
+    filter: none !important;
+    opacity: 1 !important;
+}
+
+.service-card img {
+    filter: none !important;
+    opacity: 1 !important;
+}
