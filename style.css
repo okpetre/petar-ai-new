@@ -28,6 +28,7 @@ body {
     color: var(--text-color);
     line-height: 1.6;
     overflow-x: hidden; /* Prevent horizontal scroll */
+    scroll-behavior: smooth;
 }
 
 /* General Body Styles */
@@ -269,7 +270,7 @@ a:hover {
     justify-content: center;
     align-items: center;
     min-height: 100vh; /* Full viewport height */
-    padding: 150px 80px 50px 80px; /* Adjust padding for header and bottom */
+    padding: 50px 80px 50px 80px; /* Adjust padding for header and bottom */
     box-sizing: border-box;
     position: relative;
     overflow: hidden;
@@ -291,14 +292,20 @@ a:hover {
     font-size: 8em; /* Large font size for impact */
     font-weight: 700;
     line-height: 0.8;
-    margin-bottom: 200px;
+    margin-bottom: 508px;
     background: linear-gradient(to right, #eee, #333);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
     color: transparent;
     text-transform: uppercase;
+    display: inline-flex; /* Keep it an inline-flex container */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Horizontally center items in the column */
+    justify-content: center; /* Vertically center the column content */
 }
+
+
 
 .hero-content p {
     font-size: 1.2em;
@@ -706,6 +713,11 @@ a:hover {
 .services-section .service-card.expanded .service-card-content {
     opacity: 1; /* Show text content */
     pointer-events: auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 .services-section .service-card.expanded .service-card-logo {
@@ -814,6 +826,12 @@ a:hover {
 .discord-card {
     background-image: linear-gradient(145deg, rgba(0,0,0,0.9) 60%, rgba(0,123,255,0.15), rgba(0,123,255,0.15), rgba(0,0,0,0.9) 90%); /* Discord subtle gradient - Blue */
 }
+
+/*
+.services-section .service-card:nth-child(1) {
+    background: linear-gradient(145deg, rgba(0,0,0,0.9) 60%, rgba(0,123,255,0.15), rgba(0,0,0,0.9) 90%);
+}
+*/
 
 .platforms-section .service-card h3 {
     color: var(--text-color); /* Changed to white */
@@ -960,14 +978,28 @@ footer {
 /* The .services-content and .service-grid classes are reused for platforms-section */
 
 /* Mobile responsiveness */
+
+.header-logo {
+    height: 5em; /* Adjust size as needed for header */
+    vertical-align: middle;
+    margin-left: 5px; /* Space between text and logo */
+}
+
+
+
 @media (max-width: 768px) {
+
+    .hero-content h1 {
+        margin-bottom: 247px; /* Revert margin for mobile */
+    }
+
     .main-nav ul {
+        /* Existing rule for main-nav ul */
         display: none; /* Hide navigation by default on small screens */
     }
 
     .site-header {
-        flex-direction: column;
-        align-items: center;
+        display: none; /* Hide header on mobile */
     }
 
     .header-left {
@@ -986,6 +1018,18 @@ footer {
         right: 20px;
         top: 20px;
         z-index: 1000;
+    }
+
+    .footer-content {
+        justify-content: flex-start; /* Align content to the left */
+        flex-direction: column; /* Stack items vertically on mobile */
+        align-items: flex-start; /* Align items to the start of the cross axis */
+        padding-left: 20px; /* Add some padding from the left edge */
+    }
+
+    .footer-section {
+        text-align: left; /* Ensure text within sections is left-aligned */
+        margin-bottom: 20px; /* Add space between stacked sections */
     }
 
     .hamburger-menu .bar {
@@ -1027,7 +1071,14 @@ footer {
         color: #A9A9A9; /* Grey color */
     }
 
-    .hero-section,
+    .hero-section {
+        padding-top: 0; /* Remove top padding to compensate for hidden header */
+        padding-left: 0;
+        padding-right: 0;
+        margin-left: 0;
+        margin-right: 0;
+        width: 100%;
+    }
     .ai-chatbot-section,
     .services-section,
     .platforms-section {
@@ -1379,7 +1430,7 @@ footer {
         grid-template-columns: repeat(2, 1fr);
         gap: 20px;
         padding-right: 20px; /* Adjust as needed */
-        transform: scale(0.9); /* Decrease overall size */
+        transform: scale(0.7); /* Decrease overall size */
         transform-origin: top left; /* Scale from top-left corner */
     }
 
@@ -1428,3 +1479,84 @@ footer {
     filter: none !important;
     opacity: 1 !important;
 }
+
+
+.services-section .service-card {
+    background-image: url('ps1.png') !important;
+    background-size: cover; /* Adjust as needed */
+    background-position: center; /* Adjust as needed */
+}
+
+@media (min-width: 769px) {
+    .services-section .service-card:nth-child(1) {
+        background-image: url('ps1.png') !important;
+    }
+}
+
+.hero-logo {
+    height: 1em; /* Adjust as needed to match font size */
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+/* ======================================== */
+/*      COOKIE BANNER STYLE OVERRIDE      */
+/* ======================================== */
+#cookie-consent-banner {
+    position: fixed !important;
+    bottom: 20px !important;
+    left: 20px !important;
+    right: auto !important;
+    transform: none !important;
+    width: fit-content !important;
+    display: flex;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 15px !important;
+    justify-content: flex-start !important;
+    text-align: left !important;
+    padding: 15px !important;
+    background-color: transparent !important;
+    border: 1px solid #333 !important;
+    border-radius: 8px !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5) !important;
+    z-index: 9999 !important;
+}
+
+#cookie-consent-banner p {
+    margin: 0 !important;
+    text-align: left !important;
+    color: #ccc !important;
+}
+
+#cookie-consent-banner .cookie-buttons {
+    display: flex !important;
+    gap: 10px !important;
+}
+
+#cookie-consent-banner .privacy-policy-link:hover {
+    text-decoration: underline !important;
+}
+
+/* Ensure the entire cookie banner and its buttons are clickable */
+#cookie-consent-banner {
+    pointer-events: auto !important;
+}
+
+#cookie-consent-banner button {
+    pointer-events: auto !important;
+    cursor: pointer !important;
+}
+
+/* Platforms Section Background */
+#platforms {
+    background-image: url('ps122.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 60px 20px; /* Add padding to give content space */
+    text-align: center;
+}
+
+
+

@@ -7,13 +7,14 @@
     <link rel="stylesheet" href="style.css">
 
     <link rel="stylesheet" href="custom.css">
+    <link rel="stylesheet" href="custom-card-styles.css">
 
     <link rel="icon" href="./logo.jfif" type="image/x-icon">
 </head>
 <body>
     <header class="site-header">
         <div class="header-left">
-            <a href="#" class="logo">petar.ai</a>
+            <div class="logo">petar.ai <img src="newlogo.png" alt="Petar.ai Logo" class="header-logo"></div>
         </div>
 
         <nav class="main-nav">
@@ -21,7 +22,7 @@
                 <li><a href="#">HOME</a></li>
                 <li><a href="#ai-chatbot">AI CHATBOT IMPLEMENTATION</a></li>
                 <li><a href="#services">OUR SERVICES</a></li>
-                <li><a href="#">CONTACT</a></li>
+                <li><a href="#platforms">CONTACT</a></li>
             </ul>
         </nav>
     </header>
@@ -29,11 +30,11 @@
     <main>
         <section class="hero-section">
             <div class="hero-content">
-                <h1>Petar.ai</h1>
+                <h1><img src="newlogo.png" alt="Petar.ai Logo" class="hero-logo"> Petar.ai</h1>
                 <p>We are building the world's next-generation AI computation platform, from ground up.</p>
                 <p>We are a pioneer in machine-learning algorithms and build compute platform that the world has never seen - powerful, fast and extremely energy efficient.</p>
                 <div class="hero-buttons">
-                    <a href="#" class="btn btn-secondary">Explore our services <i class="fas fa-arrow-right"></i></a>
+                    <a href="#ai-chatbot" class="btn btn-secondary">Explore our services <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
             <div class="hero-robot-container">
@@ -66,7 +67,7 @@
                     </div>
                     <div class="button-group">
                         <a href="ai-chatbot-details.html" class="btn btn-primary">Learn More</a>
-                        <a href="#" class="btn btn-contact">Contact Us</a>
+                        <a href="#platforms" class="btn btn-contact">Contact Us</a>
                     </div>
                 </div>
                 <div class="video-container">
@@ -85,17 +86,16 @@
             <h2>OUR OTHER SERVICES</h2>
             <div class="services-content">
                 <div class="service-grid">
-                    <div class="service-card">
+                    <div class="service-card clickable-card" id="ai-web-scraping-card">
                         <div class="progress-bar"></div>
                         <div class="service-card-logo">
                             <img src="sc.png" alt="Service Logo">
                         </div>
                         <div class="service-card-content">
                             <h3>AI Web Scraping</h3>
-                            <div class="card-description" style="display: none;">
+                            <div class="card-description">
                                 <p>Extract valuable data from any website with our intelligent and scalable scraping solutions.</p>
                             </div>
-                            <p class="click-info">Click for more infos</p>
                         </div>
                     </div>
                     <div class="service-card clickable-card">
@@ -105,10 +105,9 @@
                         </div>
                         <div class="service-card-content">
                             <h3>Graphic Design</h3>
-                            <div class="card-description" style="display: none;">
+                            <div class="card-description">
                                 <p>Create stunning visuals and compelling brand identities with our expert graphic design services.</p>
                             </div>
-                            <p class="click-info">Click for more infos</p>
                         </div>
                     </div>
                     <div class="service-card clickable-card">
@@ -118,10 +117,9 @@
                         </div>
                         <div class="service-card-content">
                             <h3>Automated Outreach</h3>
-                            <div class="card-description" style="display: none;">
-                                <p>Automate your marketing and sales outreach campaigns for maximum efficiency and conversion.</p>
+                            <div class="card-description">
+                                <p>Automate your marketing and sales outreach campaigns for maximum efficiency.</p>
                             </div>
-                            <p class="click-info">Click for more infos</p>
                         </div>
                     </div>
                     <div class="service-card clickable-card">
@@ -131,10 +129,9 @@
                         </div>
                         <div class="service-card-content">
                             <h3>Custom AI Solutions</h3>
-                            <div class="card-description" style="display: none;">
+                            <div class="card-description">
                                 <p>Develop bespoke AI models and applications tailored to your unique business needs.</p>
                             </div>
-                            <p class="click-info">Click for more infos</p>
                         </div>
                     </div>
                 </div>
@@ -148,41 +145,41 @@
                 <div class="service-grid hide-on-desktop">
                     <div class="service-card instagram-card">
                         <div class="icon-placeholder"><img src="ig.png" alt="Instagram Icon"></div>
-                        <h3><span class="desktop-text">Follow our Instagram</span><span class="mobile-text">Instagram</span></h3>
+                        <h3><span class="desktop-text">Follow our Instagram</span><span class="mobile-text">@petar.ai</span></h3>
                     </div>
                     <div class="service-card instagram-card">
                         <div class="icon-placeholder"><img src="ig.png" alt="Instagram Icon"></div>
-                        <h3><span class="desktop-text">Follow our Instagram</span><span class="mobile-text">Instagram</span></h3>
+                        <h3><span class="desktop-text">Follow our Instagram</span><span class="mobile-text">@petar.ai</span></h3>
                     </div>
                     <div class="service-card instagram-card mobile-only-display">
                         <div class="icon-placeholder"><img src="ig.png" alt="Instagram Icon"></div>
-                        <h3><span class="desktop-text">Follow our Instagram</span><span class="mobile-text">Instagram</span></h3>
+                        <h3><span class="desktop-text">Follow our Instagram</span><span class="mobile-text">@petar.ai</span></h3>
                     </div>
                  <div class="service-card discord-card" id="mobile-discord-to-replace">
                         <div class="icon-placeholder"><img src="fb.png" alt="Facebook Icon"></div>
-                        <h3><span class="desktop-text">Add us on Facebook</span><span class="mobile-text">Facebook</span></h3>
+                        <h3><span class="desktop-text">Add us on Facebook</span><span class="mobile-text">Petar AI</span></h3>
                     </div>
                     <div class="service-card discord-card">
                         <div class="icon-placeholder"><img src="fb.png" alt="Facebook Icon"></div>
-                        <h3><span class="desktop-text">Add us on Facebook</span><span class="mobile-text">Facebook</span></h3>
+                        <h3><span class="desktop-text">Add us on Facebook</span><span class="mobile-text">Petar AI</span></h3>
                     </div>
                 </div>
                 <div class="service-grid">
                     <div class="service-card instagram-card">
                         <div class="icon-placeholder"><img src="ig.png" alt="Instagram Icon"></div>
-                        <h3>Follow our Instagram</h3>
+                        <h3>@petar.ai</h3>
                     </div>
                     <div class="service-card x-card">
                         <div class="icon-placeholder"><img src="x1.png" alt="X Icon"></div>
-                        <h3>Follow our X</h3>
+                        <h3>@petar_ai</h3>
                     </div>
                     <div class="service-card youtube-card">
                         <div class="icon-placeholder"><img src="gm.png" alt="Google Meet Icon"></div>
-                        <h3>Email us</h3>
+                        <h3>petar@petar-ai.com</h3>
                     </div>
                     <div class="service-card discord-card">
                         <div class="icon-placeholder"><img src="fb.png" alt="Facebook Icon"></div>
-                        <h3>Add us on Facebook</h3>
+                        <h3>Petar AI</h3>
                     </div>
                 </div>
             </div>
@@ -228,11 +225,13 @@
                 // You might want to set a cookie here to remember the user's choice
             });
         }
+
+
     </script>
     <footer>
         <div class="footer-content">
             <div class="footer-section about">
-                <img src="petarai.png" alt="Petar.ai Logo" class="footer-logo">
+                <img src="newlogo.png" alt="Petar.ai Logo" class="footer-logo">
 
             </div>
             <div class="footer-section links">
@@ -255,25 +254,26 @@
             <div class="footer-section links">
                 <h3>Contact Us</h3>
                 <ul>
-                    <li><a href="#">Instagram</a></li>
-                    <li><a href="#">X</a></li>
-                    <li><a href="#">Email</a></li>
+                    <li><a href="https://www.instagram.com/petar.ai/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                    <li><a href="https://x.com/petar_ai" target="_blank" rel="noopener noreferrer">X</a></li>
+                    <li><a href="#" onclick="this.textContent='petar@petar-ai.com'; this.href='mailto:petar@petar-ai.com'; event.preventDefault();">Email</a></li>
                     <li><a href="#">Facebook</a></li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>Copyright &copy; 2025 Petar.ai Limited. All rights reserved.</p>
+            <p>Copyright &copy; 2025 Petar.AI. All rights reserved.</p>
             <div class="legal-links">
-                <a href="#">Privacy Policy</a>
-                <a href="#">Cookie Policy</a>
-                <a href="#">Terms of Service</a>
+                <a href="privacy-policy.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+                <a href="cookie-policy.html" target="_blank" rel="noopener noreferrer">Cookie Policy</a>
+                <a href="terms-of-service.html" target="_blank" rel="noopener noreferrer">Terms of Service</a>
             </div>
         </div>
     </footer>
 
     <script src="desktop-animations.js"></script>
     <script src="card-toggle.js"></script>
+
 </body>
 </html>
 
