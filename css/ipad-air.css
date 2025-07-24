@@ -1,0 +1,37 @@
+@media (min-width: 769px) and (max-width: 820px) {
+    .platforms-section .service-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns for platforms section on iPad Air */
+        gap: 20px;
+        animation: none; /* Remove animations */
+        box-sizing: border-box; /* Include padding in width */
+
+        h3 {
+            font-size: 0.9em; /* Smaller font size for mobile */
+            line-height: 1.2; /* Adjust line height */
+        }
+
+        .desktop-text {
+            display: none; /* Hide desktop text on mobile */
+        }
+
+        .mobile-text {
+            display: inline; /* Show mobile text on mobile */
+        }
+    }
+
+    .platforms-section .service-grid .service-card {
+        height: auto; /* Allow height to be determined by content */
+        flex-basis: auto !important; /* Allow max-width to take precedence */
+        width: auto !important; /* Allow max-width to take precedence */
+        padding: 10px; /* Further reduce padding for smaller screens */
+        box-sizing: border-box; /* Include padding in width */
+        max-width: 200px !important;
+    }
+
+}
+
+@media (min-width: 769px) and (max-width: 820px) {
+    .platforms-section .service-grid .service-card.youtube-card {
+        max-width: 200px !important;
+    }
+}
